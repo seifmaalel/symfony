@@ -1,0 +1,72 @@
+{% extends 'base.html.twig' %}
+
+
+         {% block PageContent %}
+
+
+<h1>zone de loisir List</h1>
+<div class="row">
+    <div class="col-12">
+        <div class="card my-4">
+            <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+                <div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
+                    <h6 class="text-white text-capitalize ps-3">Table</h6>
+                </div>
+            </div>
+            <div class="card-body px-0 pb-2">
+                <div class="table-responsive p-0">
+                    <table class="table align-items-center mb-0">
+                        <thead>
+                        <tr>
+                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">id</th>
+                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">nom</th>
+                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Adresse</th>
+                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Tel</th>
+                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">prix</th>
+                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">type/th>
+                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">email</th>
+                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">nbpage</th>
+                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">nbmax</th>
+                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">action </th>
+                            <th class="text-secondary opacity-7"></th>
+                        </tr>
+                        </thead>
+                         <tbody>
+                     
+          {% for zone_de_loisir in zone_de_loisirs %}
+               <tr>
+                <td>{{ zone_de_loisir.id }}</td>
+                <td>{{ zone_de_loisir.nom }}</td>
+                <td>{{ zone_de_loisir.adresse }}</td>
+                <td>{{ zone_de_loisir.tel }}</td>
+                <td>{{ zone_de_loisir.prix }}</td>
+                <td>{{ zone_de_loisir.type }}</td>
+                <td>{{ zone_de_loisir.email }}</td>
+                <td>{{ zone_de_loisir.nbplace }}</td>
+                 <td>{{ zone_de_loisir.nbmax}}</td>
+               
+                <td>
+                <span class="badge badge-sm bg-gradient-success">
+                    <a href="{{ path('zone_de_loisir_show', {'id': zone_de_loisir.id}) }}">show</a>
+                    </span>
+                    <span class="badge badge-sm bg-gradient-success">
+                    <a href="{{ path('zone_de_loisir_edit', {'id': zone_de_loisir.id}) }}">edit</a>
+                    </span>
+              </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="11">no records found</td>
+            </tr>
+        {% endfor %}
+
+                  </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+         {% endblock %}

@@ -1,0 +1,62 @@
+{% extends 'base1.html.twig' %}
+
+{% block title %}ZoneDeLoisir{% endblock %}
+
+{% block body %}
+    <h1>ZoneDeLoisir</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ zone_de_loisir.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ zone_de_loisir.nom }}</td>
+            </tr>
+            <tr>
+                <th>Adresse</th>
+                <td>{{ zone_de_loisir.adresse }}</td>
+            </tr>
+            <tr>
+                <th>Tel</th>
+                <td>{{ zone_de_loisir.tel }}</td>
+            </tr>
+            <tr>
+                <th>Prix</th>
+                <td>{{ zone_de_loisir.prix }}</td>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td>{{ zone_de_loisir.type }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ zone_de_loisir.email }}</td>
+            </tr>
+            <tr>
+                <th>Nbplace</th>
+                <td>{{ zone_de_loisir.nbplace }}</td>
+            </tr>
+            <tr>
+                <th>Nbmax</th>
+                <td>{{ zone_de_loisir.nbmax }}</td>
+            </tr>
+            <tr>
+                <th>Nbmax</th>
+                             <img src="{{ asset(zone_de_loisir.image) }} " alt="">
+
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('zone1_index') }}">back to list</a>
+
+    <a href="{{ path('zone1_edit', {'id': zone_de_loisir.id}) }}">edit</a>
+
+{% endblock %}
+
+
+
+

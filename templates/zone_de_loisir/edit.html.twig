@@ -1,0 +1,12 @@
+{% block title %}Edit ZoneDeLoisir{% endblock %}
+
+{% block PageContent %}
+
+    <h1>Edit ZoneDeLoisir</h1>
+
+    {{ include('zone_de_loisir/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('zone_de_loisir_index') }}">back to list</a>
+
+    {{ include('zone_de_loisir/_delete_form.html.twig') }}
+{% endblock %}

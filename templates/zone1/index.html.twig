@@ -1,0 +1,72 @@
+{% extends 'base1.html.twig' %}
+
+{% block title %}ZoneDeLoisir index{% endblock %}
+
+{% block body %}
+    <h1>ZoneDeLoisir index</h1>
+
+<section class="food_section layout_padding-bottom">
+    <div class="container">
+        <div class="heading_container heading_center">
+            <h2>
+                Our Guide
+            </h2>
+        </div>
+    
+          
+        <ul class="filters_menu">
+            <li class="active" data-filter="*">Restaurations</li>
+            <a href="{{ path('hotel_index') }}"><li data-filter=".burger" class="">Hotels</li></a>
+            <li data-filter=".pizza" class="">Zones Touristiques</li>
+            <li data-filter=".pasta" class="">zones Archéologiques</li>
+        </ul>
+
+        <div class="filters-content">
+
+            <div class="row grid">
+
+                    {% for zone_de_loisir in zone_de_loisirs %}
+                <div class="col-sm-6 col-lg-4 all piza ">
+                    <div class="box">
+                        <div>
+                            <div class="img-box">
+                                <img src="{{ asset(zone_de_loisir.image) }} " alt="">
+                            </div>
+                            <div class="detail-box">
+                                <h5>
+                                 Nom :  {{ zone_de_loisir.nom }}
+                                </h5>
+
+                                <p> telephone : {{ zone_de_loisir.tel }} </p>
+
+                                <p> Email :   {{ zone_de_loisir.email }}</p>
+
+                                <p> Page Web :  {{ zone_de_loisir.prix }}   </p>
+
+                                <p> Adresse : {{ zone_de_loisir.nbplace }}</p>
+                                 <p> Adresse : {{ zone_de_loisir.nbmax }}</p>
+
+                                    <div class="options">
+                                       <a href="{{ path('zone1_show', {'id': zone_de_loisir.id}) }}">show</a>
+ <a href="{{ path('reservation_new1', {'id': zone_de_loisir.id}) }}">reserver </a>
+
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    {% endfor %}
+
+
+            </div>
+
+        <div class="btn-box">
+            <a href="">
+                View More
+            </a>
+        </div>
+    </div>
+    </div>
+</section>
+
+{% endblock %}

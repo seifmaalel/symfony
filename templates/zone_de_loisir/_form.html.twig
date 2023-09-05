@@ -1,0 +1,47 @@
+{{ form_start(form) }}
+<table>
+<tr>
+<td> nom </td>
+ <td><div {{form_row(form.nom)}}</td>
+</tr>
+<tr>
+<td> adresse</td>
+ <td>{{form_row(form.adresse)}}</td>
+ </tr>
+ <tr>
+ <td> tel</td>
+ <td>{{form_row(form.tel)}}</td>
+ </tr>
+ <tr>
+
+<td> tel</td>
+ <td>{{form_row(form.prix     )}}</td
+ </tr>
+ <tr>
+ <td> type</td>
+  <td> {{form_row(form.type)}} </td>
+  </tr>
+  <tr>
+  <td> email</td>
+  <td> {{form_row(form.email)}} </td>
+  </tr>
+  <tr>
+  <td>nbplace </td>
+  <td>{{form_row(form.nbplace)}} </td>
+  </tr>
+  <tr>
+  <td> nbmax </td>
+  <td>  {{form_row(form.nbmax)}} </td>
+  </tr>
+ 
+</table>
+
+</div>
+  
+    <button class="btn">{{ button_label|default('Save') }}</button>
+    <div class="alert alert-danger">{{ form_rest(form)}}</div>
+   
+
+   <div id="carte"> </div>
+
+{{ form_end(form) }}
